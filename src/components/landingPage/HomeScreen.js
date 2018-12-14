@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import LoginForm from './loginForm';
 
 // welcome screen that allows user to login or sign up. chosen form rendered on screen 
 
