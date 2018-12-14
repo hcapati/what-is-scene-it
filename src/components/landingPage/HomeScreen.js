@@ -2,15 +2,12 @@ import React, { Component } from 'react';
 
 // welcome screen that allows user to login or sign up. chosen form rendered on screen 
 
-class HomeScreen extends Component {
-    state = {  }
-    render() { 
-        return ( 
-            <div>
-                <h1>What is scene it</h1>
-            </div>
-         );
-    }
+const HomeScreen = () => {
+    return ( 
+        <div>
+            <h1>What Is Scene It?</h1>
+        </div>
+     );
 }
  
 export default HomeScreen;
