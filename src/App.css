@@ -1,0 +1,12 @@
+.userStats-container {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+}
+
+.topTenScores-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px
+}

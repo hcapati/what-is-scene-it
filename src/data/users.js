@@ -5,7 +5,7 @@
         password: 'maryJane123',
         firstName: 'Peter',
         lastName: 'Parker',
-        scoreHistory: [500, 2300, 1000, 900, 3000],
+        scoreHistory: [500, 2300, 1000, 900, 3000]
     },
     {
         username: 'bbanner45',
@@ -13,7 +13,7 @@
         password: 'berttyRoss456',
         firstName: 'Bruce',
         lastName: 'Banner',
-        scoreHistory: [1000, 3500, 800, 2000, 3100],
+        scoreHistory: [1000, 3500, 800, 2000, 3100]
     },
     {
         username: 'weirdo100',
@@ -21,7 +21,7 @@
         password: 'chritinePalmer789',
         firstName: 'Stephen',
         lastName: 'Strange',
-        scoreHistory: [2000, 700, 1000, 1000, 500],
+        scoreHistory: [2100, 700, 1000, 1000, 500]
     },
     {
         username: 'merchantOfDeath',
@@ -29,7 +29,7 @@
         password: 'pepperPotts123',
         firstName: 'Tony',
         lastName: 'Stark',
-        scoreHistory: [3000, 2500, 1000, 3100, 800],
+        scoreHistory: [3000, 2500, 1000, 3100, 800]
     },
     {
         username: 'hammerGod',
@@ -37,7 +37,7 @@
         password: 'janeFoster456',
         firstName: 'Thor',
         lastName: 'Odinson',
-        scoreHistory: [500, 900, 1100, 2500, 2900],
+        scoreHistory: [500, 900, 1100, 2500, 2900]
     },
     
 ]

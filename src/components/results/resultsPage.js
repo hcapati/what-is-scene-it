@@ -10,7 +10,7 @@ class ResultsPage extends Component {
     state = {}
     render() {
         return (
-            <div>
+            <div className="container">
                 <ResultsItem />
                 <HighScores />
             </div>
