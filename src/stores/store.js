@@ -1,4 +1,5 @@
 import Data from './../data/users';
+import { CREATEUSER, LOGIN } from './../constants/constants';
 
 const initialState = {
     users: Data,
@@ -12,8 +13,42 @@ const initialState = {
     }
 }
 
-const rootReducer = (state = initialState, action) => {
-    return state;
+const currentUser = (state, user) => {
+    let selectedUser = state.find( newUser => newUser.email === user.email);
+
+    let newState = {
+        users: state,
+        currentUser: selectedUser
+    } 
+
+    return newState;
+}
+
+const loginUser = (state, logInfo) => {
+    let findUser = state.users.find( returningUser => returningUser.email === logInfo.email );
+
+    return {
+        ...state, 
+        currentUser: findUser
+    }
+}
+
+const rootReducer = (state = initialState, action) => { 
+    let updatedState;
+
+    switch (action.type) {
+        case LOGIN: {
+
+            return loginUser(state, action.email);
+        } 
+        case CREATEUSER: {
+            updatedState = [...state.users, action.user];
+
+            return currentUser(updatedState, action.user);
+        }
+        default: 
+            return state;
+    }
 }
 
 export default rootReducer;

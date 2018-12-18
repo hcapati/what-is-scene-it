@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
 
+import { Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
+
+import { createUser } from './../../actions/actions';
+
+
 // form to sign up - input username, first name, last name, email, password, confirm password 
 // check to make sure password matches confirm password
 
@@ -10,20 +16,49 @@ class SignupForm extends Component {
         lastName: '',
         email: '',
         password: '',
-        confirmPw: ''
+        confirmPw: '',
+        scoreHistory: [0],
+        islogged: false
      }
+
+    checkPw = (e) => {
+        console.log("sign up button working")
+        e.preventDefault();
+        if (this.state.password === this.state.confirmPw) {
+            this.createNewUser();
+        } else {
+            alert("Passwords do not match. Please try again.") 
+        }
+    }
+
+    createNewUser = () => {
+        this.setState({ islogged: true}, () => this.props.create(this.state))
+    }
+
+    onSignIn = () => {
+        return <Redirect to='/results'/>
+    }
 
     render() { 
         return ( 
             <div className='container'>
                 <form>
                     <div className="form-group">
-                        <label>Username</label>
+                        <label>Username:</label>
                         <input 
-                            type="email" 
+                            type="text" 
                             className="form-control"
                             value={this.state.username}
                             onChange={e => this.setState({ username: e.target.value })}
+                            palceholder="Enter username"/>
+                    </div>
+                    <div className="form-group">
+                        <label>Email:</label>
+                        <input 
+                            type="email" 
+                            className="form-control"
+                            value={this.state.email}
+                            onChange={e => this.setState({ email: e.target.value })}
                             palceholder="Enter username"/>
                     </div>
                     <div className="form-group">
@@ -58,14 +93,26 @@ class SignupForm extends Component {
                         <input 
                             type="password"
                             className="form-control"
-                            value={this.state.firstName}
+                            value={this.state.confirmPw}
                             onChange={e => this.setState({ confirmPw: e.target.value })}
                             palceholder="Confirm Password:"/>
                     </div>
+                    <button 
+                        className="btn btn-success"
+                        onClick={(e) => this.checkPw(e)}>Sign Up</button>
+                    {this.state.islogged && this.onSignIn()}
                 </form>
             </div>
          );
     }
 }
- 
-export default SignupForm;
+
+const mapStateToProps = state => ({
+    users: state
+});
+
+const mapDispatchToProps = dispatch => ({
+    create: user => { dispatch(createUser(user)) }
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(SignupForm);

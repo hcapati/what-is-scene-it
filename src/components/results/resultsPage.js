@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ResultsItem from './resultsItem';
 import HighScores from './highScores';
+import NavBar from './../navBar';
 
 // renders top scores and personal result points 
 
@@ -11,6 +12,7 @@ class ResultsPage extends Component {
     render() {
         return (
             <div className="container">
+                <NavBar />
                 <ResultsItem />
                 <HighScores />
             </div>
