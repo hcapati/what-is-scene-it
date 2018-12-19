@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import NavBar from './../navBar';
+import GameNav from '../../navs/gameNav';
 
 import Matrix from './matrix';
 
@@ -12,7 +12,7 @@ class GamePage extends Component {
     render() { 
         return ( 
             <div>
-                <NavBar />
+                <GameNav />
                 <div>
                     <Matrix />
                 </div>

@@ -5,18 +5,24 @@ class Card extends Component {
     state = { 
         value: this.props.value,
         bool: this.props.bool,
-        question: '',
+        boolCounter: 0,
         points: this.props.points,
         category: this.props.category
     }
 
 onRedirect = () => {
-   return <Redirect to={`/trivia/${this.state.value}/${this.state.category}`}/>
+    if (this.state.category === 'Marvel'){
+        return <Redirect to={`/marvel/${this.state.points}`}/>
+    }
+    else if (this.state.category === 9 || this.state.category === 17) {
+        return <Redirect to={`/trivia/${this.state.value}/${this.state.category}/${this.state.points}`}/>
+    }    
+    else {}
 }
 
 selectedCard = () => {
     this.setState({
-        bool: true
+        bool: true,
     });
 }
 

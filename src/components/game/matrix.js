@@ -44,7 +44,7 @@ class Matrix extends Component {
                         <Card value={'medium'} bool={false} points={200} category={17} />
                     </div>
                     <div className="col-md-3">
-                        <Card value={'medium'} bool={false} points={200} category={'WD'} />
+                        <Card value={'medium'} bool={false} points={200} category={'Marvel'} />
                     </div>
                     <div className="col-md-3">
                         <Card value={'medium'} bool={false} points={200} category={'S'} />
@@ -58,7 +58,7 @@ class Matrix extends Component {
                         <Card value={'medium'} bool={false} points={300} category={17} />
                     </div>
                     <div className="col-md-3">
-                        <Card value={'medium'} bool={false} points={300} category={'WD'} />
+                        <Card value={'medium'} bool={false} points={300} category={'Marvel'} />
                     </div>
                     <div className="col-md-3">
                         <Card value={'medium'} bool={false} points={300} category={'S'} />

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ResultsItem from './resultsItem';
 import HighScores from './highScores';
-import NavBar from './../navBar';
+import NavBar from '../../navs/navBar';
 
 // renders top scores and personal result points 
 

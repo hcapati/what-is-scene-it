@@ -2,11 +2,32 @@
     display: flex;
     flex-direction: column; 
     align-items: center;
+    background-color: steelblue;
+    color: white;
 }
-
 .topTenScores-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 30px
+}
+.marvelImage-container {
+    width: 500px;
+    text-align: center;
+}
+.marvelImage-container img {
+    width: 100%;
+    border-radius: 30px;
+}
+.marvel-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.mb-3 {
+    width: 500px;
+    margin-top: 30px;
+}
+.mb-3 input button {
+    width: 100%
 }

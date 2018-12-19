@@ -1,5 +1,5 @@
 import Data from './../data/users';
-import { CREATEUSER, LOGIN } from './../constants/constants';
+import { CREATEUSER, LOGIN, ADDPTS, MINUSPTS } from './../constants/constants';
 
 const initialState = {
     users: Data,
@@ -10,7 +10,8 @@ const initialState = {
         firstName: 'Bruce',
         lastName: 'Banner',
         scoreHistory: [1000, 3500, 800, 2000, 3100],
-    }
+    },
+    inGamePts: 0,
 }
 
 const currentUser = (state, user) => {
@@ -35,16 +36,32 @@ const loginUser = (state, logInfo) => {
 
 const rootReducer = (state = initialState, action) => { 
     let updatedState;
+    let updatedPts;
 
     switch (action.type) {
         case LOGIN: {
-
             return loginUser(state, action.email);
         } 
         case CREATEUSER: {
             updatedState = [...state.users, action.user];
 
             return currentUser(updatedState, action.user);
+        }
+        case ADDPTS: {
+            updatedPts = state.inGamePts + parseInt(action.points);
+
+            return { 
+                ...state,
+                inGamePts: updatedPts
+            } 
+        }
+        case MINUSPTS: {
+            updatedPts = state.inGamePts - parseInt(action.points);
+
+            return {
+                ...state,
+                inGamePts: updatedPts
+            } 
         }
         default: 
             return state;

@@ -1,14 +1,18 @@
-// shows trivia question and either audio, img, video snippet
-// add or subtract from points 
-
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
 import axios from 'axios';
 
+import { addPts, minusPts } from './../../actions/actions'
+import loadingGif from './../../assets/loading.gif';
 
 class Trivia extends Component {
     state = {
         question: {},
-        answers: []
+        answers: [],
+        selectedAnswer: '',
+        redirect: false,
+        bool: true
     }
 
     componentDidMount = () => {
@@ -20,7 +24,7 @@ class Trivia extends Component {
             .then(response => {
                 this.setState({
                     question: response.data.results[0]
-                }, () => this.getAnswers() );
+                } , () => this.getAnswers());
             })
     };
 
@@ -38,22 +42,55 @@ class Trivia extends Component {
         });
     };
 
-    shuffleAnswers = (array) => {
-        let shuffled = array.map((a) => [Math.random(),a]).sort((a,b) => a[0]-b[0]).map((a) => a[1]);
+    setAnswer = (e) => {
         this.setState({
-            answers: shuffled
-        })
+            selectedAnswer: e.target.value,
+        }, () => this.checkAnswer());
+    }
+
+    checkAnswer = () => {
+        if (this.state.selectedAnswer === this.state.question.correct_answer){
+            this.props.addPts(this.props.match.params.pointsId);
+            this.setState({ 
+                redirect: true,
+                bool: false
+            })
+        } else {
+            this.props.minusPts(this.props.match.params.pointsId);
+            this.setState({ redirect: true })
+        }
+    }
+
+    onRedirect = () => {
+        return <Redirect to='/game'/>
     }
 
     render() {
         return (
-            <div>
+            <div className="container">
                 <h1>Trivia Page</h1>
-                <h1>{this.decodeHtml(this.state.question.question)}</h1>
-                {}
+                {this.state.question.question === undefined 
+                ? <img src={loadingGif} alt=""/>
+                :( <h1>{this.decodeHtml(this.state.question.question)}</h1> )
+                }
+                {this.state.answers && this.state.answers.map((a, index) => (
+                    <div key={a + index}>
+                        <button 
+                            className="btn-outline-secondary"
+                            value={a}
+                            onClick={(e) => this.setAnswer(e)}>
+                            {this.decodeHtml(a)}</button>
+                    </div>
+                ))}
+                {this.state.redirect ? this.onRedirect() : ''}
             </div>
         );
     }
 }
 
-export default Trivia;
+const mapPropsToDispatch = dispatch => ({
+    addPts: points => { dispatch(addPts(points)) },
+    minusPts: points => { dispatch(minusPts(points)) }
+});
+
+export default connect(null, mapPropsToDispatch)(Trivia);

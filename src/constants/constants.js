@@ -2,3 +2,5 @@
 
 export const CREATEUSER = 'CREATEUSER';
 export const LOGIN = 'LOGIN';
+export const ADDPTS = 'ADDPTS';
+export const MINUSPTS = "MINUSPTS";
