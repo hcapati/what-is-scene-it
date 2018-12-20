@@ -7,3 +7,5 @@ export const MINUSPTS = "MINUSPTS";
 export const SETCATEGORY = "SETCATEGORY";
 export const SETDIFFICULTY = "SETDIFFICULTY";
 export const DISABLECARD = "DISABLECARD";
+export const GAMEOVER = "GAMEOVER";
+export const RESULTS = "RESULTS";

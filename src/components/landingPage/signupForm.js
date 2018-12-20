@@ -41,7 +41,7 @@ class SignupForm extends Component {
 
     render() { 
         return ( 
-            <div className='container'>
+            <div>
                 <form>
                     <div className="form-group">
                         <label>Username:</label>
@@ -50,15 +50,6 @@ class SignupForm extends Component {
                             className="form-control"
                             value={this.state.username}
                             onChange={e => this.setState({ username: e.target.value })}
-                            palceholder="Enter username"/>
-                    </div>
-                    <div className="form-group">
-                        <label>Email:</label>
-                        <input 
-                            type="email" 
-                            className="form-control"
-                            value={this.state.email}
-                            onChange={e => this.setState({ email: e.target.value })}
                             palceholder="Enter username"/>
                     </div>
                     <div className="form-group">
@@ -78,6 +69,15 @@ class SignupForm extends Component {
                             value={this.state.lastName}
                             onChange={e => this.setState({ lastName: e.target.value })}
                             palceholder="Enter Last Name:"/>
+                    </div>
+                    <div className="form-group">
+                        <label>Email:</label>
+                        <input 
+                            type="email" 
+                            className="form-control"
+                            value={this.state.email}
+                            onChange={e => this.setState({ email: e.target.value })}
+                            palceholder="Enter username"/>
                     </div>
                     <div className="form-group">
                         <label>Password:</label>

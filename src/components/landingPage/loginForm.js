@@ -40,8 +40,8 @@ class LoginForm extends Component {
         this.state.redirect 
         ? <Redirect to='/results'/>
         : (
-            <div className="container">
-                <form className="px 4 py 3">
+            <div>
+                <form>
                     <div className="form-group">
                         <label htmlFor="">Email</label>
                         <input 

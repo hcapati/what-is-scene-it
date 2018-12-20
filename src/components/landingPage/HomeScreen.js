@@ -10,9 +10,11 @@ const HomeScreen = () => {
     return ( 
         <div className="container">
             <h1>What Is Scene It?</h1>
-            <div>
+            <div id="form">
                 <div>
                     <LoginForm />
+                </div>
+                <div>
                     <SignupForm />
                 </div>
             </div>

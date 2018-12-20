@@ -31,11 +31,9 @@
 .mb-3 input button {
     width: 100%
 }
-
 .hide {
     display: none;
 }
-
 .sceneIt-container {
     display: flex;
     flex-direction: column;

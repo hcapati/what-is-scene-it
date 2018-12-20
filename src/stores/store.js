@@ -1,32 +1,30 @@
 import Data from './../data/users';
 import Cards from './../data/cards';
-import { CREATEUSER, LOGIN, ADDPTS, MINUSPTS, SETDIFFICULTY, SETCATEGORY, DISABLECARD } from './../constants/constants';
+import { CREATEUSER, LOGIN, ADDPTS, MINUSPTS, SETDIFFICULTY, SETCATEGORY, DISABLECARD, GAMEOVER, RESULTS } from './../constants/constants';
 
 const initialState = {
     users: Data,
-    currentUser: {
-        username: 'bbanner45',
-        email: 'always_angry@gmail.com',
-        password: 'berttyRoss456',
-        firstName: 'Bruce',
-        lastName: 'Banner',
-        scoreHistory: [1000, 3500, 800, 2000, 3100],
-    },
+    currentUser: { },
     inGamePts: 0,
     category: 0,
     difficulty: '',
-    cards : Cards
-    
+    cards : Cards,
+    cardCounter: 0
 }
 
 const currentUser = (state, user) => {
-    let selectedUser = state.find( newUser => newUser.email === user.email);
+    let newUserCopy = state.users.slice();
+    let addUser = newUserCopy.push(user);
+    addUser = newUserCopy;
+
+    let selectedUser = addUser.find( newUser => newUser.email === user.email);
 
     let newState = {
-        users: state,
+        ...state,
+        users: addUser,
         currentUser: selectedUser
-    } 
-
+    }
+    
     return newState;
 }
 
@@ -39,6 +37,26 @@ const loginUser = (state, logInfo) => {
     }
 }
 
+const storePoints = (state) => {
+    let scoreHistoryCopy = state.currentUser.scoreHistory.slice();
+    let newScore = scoreHistoryCopy.push(state.inGamePts)
+    
+    newScore = scoreHistoryCopy
+    
+    return newScore
+    
+}
+
+const updateUsers = (state) => {
+    let newUserCopy = state.users.slice();
+    let currentUserIndex = newUserCopy.findIndex( u => u.email === state.currentUser.email);
+    console.log(currentUserIndex);
+    newUserCopy.splice(currentUserIndex, 1, state.currentUser)
+    console.log(state.currentUser);
+    
+    return newUserCopy
+}
+
 const rootReducer = (state = initialState, action) => { 
     let updatedState;
     let updatedPts;
@@ -48,9 +66,9 @@ const rootReducer = (state = initialState, action) => {
             return loginUser(state, action.email);
         } 
         case CREATEUSER: {
-            updatedState = [...state.users, action.user];
+            // updatedState = [...state.users, action.user];
 
-            return currentUser(updatedState, action.user);
+            return currentUser(state, action.user);
         }
         case ADDPTS: {
             updatedPts = state.inGamePts + parseInt(action.points);
@@ -81,11 +99,38 @@ const rootReducer = (state = initialState, action) => {
             }
         }
         case DISABLECARD: {
-            console.log(action.card)
             return {
                 ...state, 
+                cardCounter: state.cardCounter + 1,
                 cards: state.cards.map((c, i) => i === action.card ? {...c, val: true}
                     : c )
+            }
+        }
+        case GAMEOVER: {
+            return {
+                ...state,
+                cardCounter: 0,
+                inGamePts: 0,
+                category: 0,
+                difficulty: '', 
+                cards: [
+                    state.cards.map((c) => {
+                    return {    
+                            ...c,
+                            val: false 
+                        }
+                    })
+                ],
+                currentUser: {
+                    ...state.currentUser,
+                    scoreHistory: storePoints(state)
+                }
+            }
+        }
+        case RESULTS: {
+            return {
+                ...state,
+                users: updateUsers(state)
             }
         }
         default: 

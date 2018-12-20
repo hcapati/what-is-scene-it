@@ -17,8 +17,8 @@ class App extends Component {
       <div>
         <h1>Scene It Project</h1>  
         <Switch>
-          {/* <Route exact path="/" render={(renderProps) => <HomeScreen />} />
-          <Route path='/results' render={(renderProps) => <ResultsPage />} /> */}
+          <Route exact path="/" render={(renderProps) => <HomeScreen />} />
+          <Route path='/results' render={(renderProps) => <ResultsPage />} />
           <Route path='/instructions' render={(renderProps) => <Instructions />} />
           <Route path='/game' render={(renderProps) => <Game />} />
           <Route path='/trivia/:valueId/:categoryId/:pointsId' component={Trivia} render={(renderProps) => <Trivia />} />
