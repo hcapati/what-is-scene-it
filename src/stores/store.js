@@ -1,4 +1,5 @@
 import Data from './../data/users';
+import Cards from './../data/cards';
 import { CREATEUSER, LOGIN, ADDPTS, MINUSPTS, SETDIFFICULTY, SETCATEGORY, DISABLECARD } from './../constants/constants';
 
 const initialState = {
@@ -14,22 +15,8 @@ const initialState = {
     inGamePts: 0,
     category: 0,
     difficulty: '',
-    card1: 'show',
-    card2: 'show',
-    card3: 'show',
-    card4: 'show',
-    card5: 'show',
-    card6: 'show',
-    card7: 'show',
-    card8: 'show',
-    card9: 'show',
-    card10: 'show',
-    card11: 'show',
-    card12: 'show',
-    card13: 'show',
-    card14: 'show',
-    card15: 'show',
-    card16: 'show',
+    cards : Cards
+    
 }
 
 const currentUser = (state, user) => {
@@ -94,10 +81,11 @@ const rootReducer = (state = initialState, action) => {
             }
         }
         case DISABLECARD: {
-            let card = action.card;
+            console.log(action.card)
             return {
                 ...state, 
-                card: 'hide'
+                cards: state.cards.map((c, i) => i === action.card ? {...c, val: true}
+                    : c )
             }
         }
         default: 

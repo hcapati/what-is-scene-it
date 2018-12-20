@@ -64,7 +64,7 @@ class Marvel extends Component {
        return (
            <div className='marvel-container'>
                 {this.state.image === '' 
-                ? <img src={loadingGif} />
+                ? <img src={loadingGif} alt=""/>
                 : ( 
                 <div className='marvelImage-container'>
                     <h1>Who Dat?</h1>
