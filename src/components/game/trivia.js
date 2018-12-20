@@ -20,7 +20,7 @@ class Trivia extends Component {
     };
 
     fetchQuestion = () => {
-        axios.get(`https://opentdb.com/api.php?amount=10&category=${this.props.match.params.categoryId}&difficulty=${this.props.match.params.valueId}`)
+        axios.get(`https://opentdb.com/api.php?amount=10&category=${this.props.gameState.category}&difficulty=${this.props.gameState.difficulty}`)
             .then(response => {
                 this.setState({
                     question: response.data.results[0]
@@ -87,10 +87,13 @@ class Trivia extends Component {
         );
     }
 }
+const mapStateToProps = state => ({
+    gameState: state
+})
 
 const mapPropsToDispatch = dispatch => ({
     addPts: points => { dispatch(addPts(points)) },
     minusPts: points => { dispatch(minusPts(points)) }
 });
 
-export default connect(null, mapPropsToDispatch)(Trivia);
+export default connect(mapStateToProps, mapPropsToDispatch)(Trivia);
