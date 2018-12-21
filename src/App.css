@@ -45,3 +45,172 @@
 .backdrop-container img {
     border-radius: 30px;
 }
+.cardButton {
+    border-radius: 10px;
+    margin: 5%;
+    padding: 15%;
+    width: 215px;
+    font-size: 25px;
+    background-color: steelblue;
+    box-shadow: 5px 10px 15px black;
+    border: 2px solid grey;
+    font-family: 'Audiowide', cursive;
+}
+button:active {
+    transform: scale(0.7);
+}
+.category {
+    display: flex;
+    margin-top: 1%;
+    padding-left: 0.1%;
+    text-align: center;
+    text-shadow: 2px 2px grey;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: 'Audiowide', cursive;
+}
+#background-img {
+    background: url(https://mir-s3-cdn-cf.behance.net/project_modules/fs/b0e53331516629.565449774c2d4.png)no-repeat;
+    height: 100vh;
+}
+.gameNav-container {
+    font-family: 'Audiowide', cursive;
+}
+.nav-btn {
+    margin: 0.5%;
+}
+.points-container {
+    margin: 1%;
+    color: white;
+    text-shadow: 2px 2px grey;
+}
+.instructions-page {
+    background: url(https://mir-s3-cdn-cf.behance.net/project_modules/fs/770fdc31516629.56544dec025ad.png)no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.instructions-container {
+    display: flex;
+    background-color: rgba(211, 211, 211, 0.8);
+    padding: 3%;
+    border-radius: 20px;
+    flex-direction: column;
+    align-items: center;
+}
+.instructions-button {
+    font-size: 25px;
+}
+.instructions {
+    font-size: 20px;
+}
+.homePage-container {
+    background: url(https://mir-s3-cdn-cf.behance.net/project_modules/fs/9987ea31516629.56544977494b9.png)no-repeat;
+    height: 100vh;
+}
+.title {
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    text-shadow: 2px 2px grey;
+}
+.form-background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2%;
+    margin-top: 5%;
+}
+.login-container {
+    display: flex;
+    width: 400px;
+    height: 500px;
+    padding: 5%;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+.signup-container {
+    display: flex;
+    margin-top: 10%;
+    width: 450px;
+    height: 250px;
+    padding: 5%;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+}
+.login-form {
+    box-shadow: 0em 0em 2em 0em rgba(0, 0, 0, 1);
+    background-color: white;
+    width: 350px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.signup-form{
+    box-shadow: 0em 0em 2em 0em rgba(0, 0, 0, 1);
+    width: 375px;
+    height: 550px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.signupFormBtn{
+    margin-top: 5%;
+}
+label{
+    color: black;
+    font-size: 15px;
+}
+.formInput {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid grey;
+    color: black;
+    display: flex;
+    justify-content: center flex-end;
+    align-items: center;
+    width: 300px;
+    font-size: 20px;
+}
+.formColor {
+    background-color: transparent;
+    padding: 10%;
+    color: black;
+}
+.welcome-header {
+    display: flex;
+    color: white;
+    text-shadow: 2px 2px grey;
+    margin-bottom: 10%;
+}
+#signupHeader {
+    margin-left: 1%;
+    font-size: 20px;
+    color: white;
+    text-shadow: 1px 2px grey;
+}
+#signupBtn {
+    font-size: 15px;
+    color: white;
+    text-shadow: 1px 1px black;
+    border: 2px solid grey;
+    margin-left: 2.5%;
+    box-shadow: 5px 5px 5px black;
+}
+.login-btn {
+    margin-top: 10%;
+}
+.backLoginBtn{
+    font-size: 15px;
+    color: white;
+    text-shadow: 1px 1px black;
+    border: 2px solid grey;
+    margin-left: 1%;
+    box-shadow: 5px 5px 5px black;
+}

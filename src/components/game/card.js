@@ -32,10 +32,10 @@ class Card extends Component {
     render() { 
         return ( 
             <div>
-                <div className="card">
+                <div>
                     <button 
                     type="button" 
-                    className="btn-primary"
+                    className="btn btn-primary cardButton"
                     onClick={this.selectCard}
                     setQuestion={this.props.setQuestion}>
                     {this.state.points}</button>

@@ -1,13 +1,8 @@
-import React, { Component } from 'react';
-
+import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import { createUser } from './../../actions/actions';
-
-
-// form to sign up - input username, first name, last name, email, password, confirm password 
-// check to make sure password matches confirm password
+import { createUser } from './../../actions/actions'; 
 
 class SignupForm extends Component {
     state = { 
@@ -42,63 +37,63 @@ class SignupForm extends Component {
     render() { 
         return ( 
             <div>
-                <form>
-                    <div className="form-group">
+                <form className="formColor signup-form">
+                    <div className="form-group row">
                         <label>Username:</label>
                         <input 
                             type="text" 
-                            className="form-control"
+                            className="form-control formInput"
                             value={this.state.username}
                             onChange={e => this.setState({ username: e.target.value })}
                             palceholder="Enter username"/>
                     </div>
-                    <div className="form-group">
+                    <div className="form-group row">
                         <label>First Name:</label>
                         <input 
                             type="text"
-                            className="form-control"
+                            className="form-control formInput"
                             value={this.state.firstName}
                             onChange={e => this.setState({ firstName: e.target.value })}
                             palceholder="Enter First Name:"/>
                     </div>
-                    <div className="form-group">
+                    <div className="form-group row">
                         <label>Last Name:</label>
                         <input 
                             type="text"
-                            className="form-control"
+                            className="form-control formInput"
                             value={this.state.lastName}
                             onChange={e => this.setState({ lastName: e.target.value })}
                             palceholder="Enter Last Name:"/>
                     </div>
-                    <div className="form-group">
+                    <div className="form-group row">
                         <label>Email:</label>
                         <input 
                             type="email" 
-                            className="form-control"
+                            className="form-control formInput"
                             value={this.state.email}
                             onChange={e => this.setState({ email: e.target.value })}
                             palceholder="Enter username"/>
                     </div>
-                    <div className="form-group">
+                    <div className="form-group row">
                         <label>Password:</label>
                         <input 
                             type="password"
-                            className="form-control"
+                            className="form-control formInput"
                             value={this.state.password}
                             onChange={e => this.setState({ password: e.target.value })}
                             palceholder="Enter Password:"/>
                     </div>
-                    <div className="form-group">
+                    <div className="form-group row">
                         <label>Confirm Password:</label>
                         <input 
                             type="password"
-                            className="form-control"
+                            className="form-control formInput"
                             value={this.state.confirmPw}
                             onChange={e => this.setState({ confirmPw: e.target.value })}
                             palceholder="Confirm Password:"/>
                     </div>
                     <button 
-                        className="btn btn-success"
+                        className="btn btn-success signupFormBtn"
                         onClick={(e) => this.checkPw(e)}>Sign Up</button>
                     {this.state.islogged && this.onSignIn()}
                 </form>

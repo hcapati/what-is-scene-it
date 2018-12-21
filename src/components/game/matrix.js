@@ -33,14 +33,6 @@ class Matrix extends Component {
         }
     }
 
-    // restartGame = () => {
-    //     this.setState({
-    //         gameOver: false
-    //     });
-    //     this.props.gameOver();
-    // }
-
-
     getResults = () => {
         this.props.gameOver();
         this.props.getResults();
@@ -65,19 +57,21 @@ class Matrix extends Component {
                     </div>
                 </div>
                 :
-                <div className='container'>
-                    <div className="row">
-                        <div className="col-md-3">
-                            <h6>General Knowledge</h6>
-                        </div>
-                        <div className="col-md-3">
-                            <h6>Science & Nature</h6>
-                        </div>
-                        <div className="col-md-3">
-                            <h6>Who Dat?</h6>
-                        </div>
-                        <div className="col-md-3">
-                            <h6>Scene It</h6>
+                <div className="container">
+                    <div>
+                        <div className="row">
+                            <div className="col-md-3 category">
+                                <h3>General Knowledge</h3>
+                            </div>
+                            <div className="col-md-3 category">
+                                <h3>Science & Nature</h3>
+                            </div>
+                            <div className="col-md-3 category">
+                                <h3>Who Dat?</h3>
+                            </div>
+                            <div className="col-md-3 category">
+                                <h3>Scene It</h3>
+                            </div>
                         </div>
                     </div>
                     <div className="row">

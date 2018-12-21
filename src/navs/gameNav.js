@@ -7,10 +7,11 @@ import { gameOver } from './../actions/actions'
 const GameNav = (props) => {
     return ( 
         <div>
-            <Link to='/instructions'> How to play </Link>
-            <Link to='/results' onClick={props.gameOver}> Quit Game </Link>
-            {/* <button onClick={props.gameOver}>x</button> */}
-            <h5>Current Points: {props.points.inGamePts}</h5>
+            <Link to='/instructions' className='btn btn-outline-primary nav-btn'> How to play </Link>
+            <Link to='/results' className='btn btn-outline-primary nav-btn' onClick={props.gameOver}> Quit Game </Link>
+            <div className="points-container">
+                <h3> Current Points: {props.points.inGamePts} </h3>
+            </div>
         </div>
      );
 }

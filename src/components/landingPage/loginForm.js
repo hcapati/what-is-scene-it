@@ -16,7 +16,6 @@ class LoginForm extends Component {
     }
 
     verifyPw = (e) => {
-        // console.log(this.props.users.users);
         e.preventDefault();
 
         let findUser = this.props.users.users.find(user => user.email === this.state.user.email)
@@ -41,25 +40,23 @@ class LoginForm extends Component {
         ? <Redirect to='/results'/>
         : (
             <div>
-                <form>
-                    <div className="form-group">
-                        <label htmlFor="">Email</label>
+                <form className='formColor login-form'>
+                    <div className="form-group row">
+                        <label>Email:</label>
                         <input 
                             type="email" 
-                            className="form-control" 
-                            placeholder="Email" 
+                            className="form-control formInput" 
                             value={this.state.user.email}
                             onChange={e => this.setState({ 
                                 user: {
                                 ...this.state.user,
                                 email: e.target.value }})}/>
                     </div>
-                    <div className="form-group">
-                        <label htmlFor="">Password</label>
+                    <div className="form-group row">
+                        <label>Password:</label>
                         <input 
                             type="password" 
-                            className="form-control" 
-                            placeholder="Password" 
+                            className="form-control formInput" 
                             value={this.state.user.password}
                             onChange={e => this.setState({ 
                                 user: {
@@ -67,7 +64,7 @@ class LoginForm extends Component {
                                     password: e.target.value }})}/>
                     </div>
                     <button 
-                        className="btn btn-success"
+                        className="btn btn-success login-btn"
                         onClick={(e) => this.verifyPw(e)}>Login</button>
                 </form>
             </div>
