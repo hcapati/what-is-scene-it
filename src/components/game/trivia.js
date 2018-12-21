@@ -17,7 +17,7 @@ class Trivia extends Component {
 
     componentDidMount = () => {
         this.fetchQuestion();
-    };
+    }
 
     fetchQuestion = () => {
         axios.get(`https://opentdb.com/api.php?amount=10&category=${this.props.gameState.category}&difficulty=${this.props.gameState.difficulty}`)
@@ -26,12 +26,12 @@ class Trivia extends Component {
                     question: response.data.results[0]
                 }, () => this.getAnswers());
             })
-    };
+    }
 
     decodeHtml = (input) => {
         let question = new DOMParser().parseFromString(input, 'text/html');
         return question.documentElement.textContent;
-    };
+    }
 
     getAnswers = () => {
         this.state.question.incorrect_answers.push(this.state.question.correct_answer);

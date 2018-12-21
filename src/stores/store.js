@@ -4,14 +4,7 @@ import { CREATEUSER, LOGIN, ADDPTS, MINUSPTS, SETDIFFICULTY, SETCATEGORY, DISABL
 
 const initialState = {
     users: Data,
-    currentUser: {
-        username: 'merchantOfDeath',
-        email: 'tstark@starkindustries.com',
-        password: 'pepperPotts123',
-        firstName: 'Tony',
-        lastName: 'Stark',
-        scoreHistory: [3000, 2500, 1000, 3100, 800]
-    },
+    currentUser: { },
     inGamePts: 0,
     category: 0,
     difficulty: '',
@@ -73,8 +66,6 @@ const rootReducer = (state = initialState, action) => {
             return loginUser(state, action.email);
         } 
         case CREATEUSER: {
-            // updatedState = [...state.users, action.user];
-
             return currentUser(state, action.user);
         }
         case ADDPTS: {

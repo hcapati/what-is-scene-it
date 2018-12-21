@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { addPts, minusPts } from './../../../actions/actions';
+import { sceneitkey } from './../../../constants/keys';
 import axios from 'axios';
 
 class SceneIt extends Component {
@@ -27,7 +28,7 @@ class SceneIt extends Component {
     }
 
     fetchImages = () => {
-        axios.get("https://api.themoviedb.org/3/movie/top_rated?api_key=bc1e92ab5760aac10dc7e3ed2437c91d&language=en-US&page=1")
+        axios.get(`https://api.themoviedb.org/3/movie/top_rated?api_key=${sceneitkey}&language=en-US&page=1`)
             .then(response => {
                 this.setState({
                     backdrops: response.data.results.map((a) => [Math.random(), a]).sort((a, b) => a[0] - b[0]).map((a) => a[1])

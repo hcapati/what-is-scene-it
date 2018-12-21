@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { addPts, minusPts, setCategory } from './../../../actions/actions';
+import { addPts, minusPts } from './../../../actions/actions';
 
 import loadingGif from './../../../assets/loading.gif';
+import { marvelkey } from './../../../constants/keys';
 
 class Marvel extends Component {
     state = {
@@ -32,7 +33,7 @@ class Marvel extends Component {
     }
 
     fetchMarvelChar = () => {
-        axios.get(`https://gateway.marvel.com:443/v1/public/characters?nameStartsWith=${this.shuffleArray(parseInt(this.props.gameState.category))}&apikey=41961b79291434ed6a69c4e92a27afde`)
+        axios.get(`https://gateway.marvel.com:443/v1/public/characters?nameStartsWith=${this.shuffleArray(parseInt(this.props.gameState.category))}&apikey=${marvelkey}`)
             .then(response => {
                 console.log(response.data.data.results[0])
                 this.setState({

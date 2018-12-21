@@ -52,7 +52,7 @@ class Matrix extends Component {
                     <h1>Game Over</h1>
                     <div>
                         <button 
-                            className="btn btn-success"
+                            className="btn btn-outline-primary"
                             onClick={this.getResults}>See your Results</button>
                     </div>
                 </div>

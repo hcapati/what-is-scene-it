@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 
-// hard code list of high scores - top 10
-
 class HighScores extends Component {
     state = {
         allScores: []
