@@ -11,10 +11,13 @@ class ResultsPage extends Component {
     state = {}
     render() {
         return (
-            <div className="container">
+            <div className="resultsPage-container">
                 <NavBar />
-                <ResultsItem />
-                <HighScores />
+                <div className="container">
+                    <ResultsItem />
+                    <HighScores />
+                </div>
+
             </div>
         );
     }

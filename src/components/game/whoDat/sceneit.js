@@ -44,13 +44,13 @@ class SceneIt extends Component {
             })
         } else if (this.state.userAnswer.toLowerCase() !== this.state.answer.toLowerCase()) {
             console.log('wrong');
-             this.props.minusPts(this.props.gameState.category)
-             this.setState({
-                 redirect: true
-             })
+            this.props.minusPts(this.props.gameState.category)
+            this.setState({
+                redirect: true
+            })
         }
     };
- 
+
     onRedirect = () => {
         return <Redirect to='/game' />
     }
@@ -58,24 +58,26 @@ class SceneIt extends Component {
     render() {
         return (
             <div className="sceneIt-container">
-                <div className="backdrop-container">
-                    <h1>Scene It</h1>
-                    <img src={`http://image.tmdb.org/t/p/w780${this.state.imageUrl}`} alt="" />
+                <div className="sceneIt-inner-container">
+                    <div className="backdrop-container">
+                        <h1>Scene It</h1>
+                        <img src={`http://image.tmdb.org/t/p/w780${this.state.imageUrl}`} alt="" />
+                    </div>
+                    <div className="input-container input-group mb-3 sceneIt-input">
+                        <input
+                            type="text"
+                            className="form-control"
+                            value={this.state.userAnswer}
+                            onChange={(e) => this.setState({ userAnswer: e.target.value })} />
+                        <div className="input-group-append">
+                            <button
+                                className="btn btn-outline-primary"
+                                onClick={this.submitAnswer}
+                            >Final Answer?</button>
+                        </div>
+                    </div>
                 </div>
-                <div className= "input-container input-group mb-3">
-                   <input
-                       type="text"
-                       className="form-control"
-                       value={this.state.userAnswer}
-                       onChange={(e) => this.setState({ userAnswer: e.target.value })} />
-                   <div className="input-group-append">
-                       <button
-                           className="btn btn-outline-primary"
-                       onClick={this.submitAnswer}
-                       >Final Answer?</button>
-                   </div>
-               </div>
-               {this.state.redirect && this.onRedirect()}
+                {this.state.redirect && this.onRedirect()}
             </div>
         );
     }
@@ -86,8 +88,8 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-    addPts: points => {( dispatch(addPts(points)) )},
-    minusPts: points => {( dispatch(minusPts(points)) )}
+    addPts: points => { (dispatch(addPts(points))) },
+    minusPts: points => { (dispatch(minusPts(points))) }
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SceneIt);

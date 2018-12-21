@@ -24,19 +24,19 @@ class Trivia extends Component {
             .then(response => {
                 this.setState({
                     question: response.data.results[0]
-                } , () => this.getAnswers());
+                }, () => this.getAnswers());
             })
     };
 
     decodeHtml = (input) => {
         let question = new DOMParser().parseFromString(input, 'text/html');
         return question.documentElement.textContent;
-    };     
+    };
 
     getAnswers = () => {
         this.state.question.incorrect_answers.push(this.state.question.correct_answer);
-        let shuffled = this.state.question.incorrect_answers.map((a) => [Math.random(),a]).sort((a,b) => a[0]-b[0]).map((a) => a[1]);
-        
+        let shuffled = this.state.question.incorrect_answers.map((a) => [Math.random(), a]).sort((a, b) => a[0] - b[0]).map((a) => a[1]);
+
         this.setState({
             answers: shuffled
         });
@@ -49,9 +49,9 @@ class Trivia extends Component {
     }
 
     checkAnswer = () => {
-        if (this.state.selectedAnswer === this.state.question.correct_answer){
+        if (this.state.selectedAnswer === this.state.question.correct_answer) {
             this.props.addPts(this.props.match.params.pointsId);
-            this.setState({ 
+            this.setState({
                 redirect: true,
                 bool: false
             })
@@ -62,27 +62,32 @@ class Trivia extends Component {
     }
 
     onRedirect = () => {
-        return <Redirect to='/game'/>
+        return <Redirect to='/game' />
     }
 
     render() {
         return (
-            <div className="container">
-                <h1>Trivia Page</h1>
-                {this.state.question.question === undefined 
-                ? <img src={loadingGif} alt=""/>
-                :( <h1>{this.decodeHtml(this.state.question.question)}</h1> )
-                }
-                {this.state.answers && this.state.answers.map((a, index) => (
-                    <div key={a + index}>
-                        <button 
-                            className="btn-outline-secondary"
-                            value={a}
-                            onClick={(e) => this.setAnswer(e)}>
-                            {this.decodeHtml(a)}</button>
+            <div className="triviaPage-container">
+                <div className="container trivia-innerContainer">
+                    {this.state.question.question === undefined
+                        ? <img src={loadingGif} alt="" />
+                        : (<h1>{this.decodeHtml(this.state.question.question)}</h1>)
+                    }
+                    <div className="allBtn-container">
+                        {this.state.answers && this.state.answers.map((a, index) => (
+                            <div key={a + index} className="btn-container">
+                                <button
+                                    className="btn-secondary trivia-btn"
+                                    value={a}
+                                    onClick={(e) => this.setAnswer(e)}>
+                                    {this.decodeHtml(a)}</button>
+                            </div>
+                        ))}
                     </div>
-                ))}
-                {this.state.redirect ? this.onRedirect() : ''}
+
+                    {this.state.redirect ? this.onRedirect() : ''}
+                </div>
+
             </div>
         );
     }

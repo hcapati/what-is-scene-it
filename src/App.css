@@ -1,3 +1,7 @@
+
+/* //////////////////////////////////// */
+/*             Results                  */
+/* //////////////////////////////////// */
 .userStats-container {
     display: flex;
     flex-direction: column; 
@@ -5,43 +9,97 @@
     background-color: steelblue;
     color: white;
 }
+
 .topTenScores-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 30px
 }
-.marvelImage-container {
-    width: 500px;
-    text-align: center;
+
+.resultsPage-container {
+    font-family: 'Audiowide', cursive;
+    background: url(https://mir-s3-cdn-cf.behance.net/project_modules/max_3840/2f286c31516629.565451f6bc65c.png) no-repeat;
+    height: 100vh;
 }
-.marvelImage-container img {
-    width: 100%;
-    border-radius: 30px;
-}
+
+/* //////////////////////////////////// */
+/*             Marvel                   */
+/* //////////////////////////////////// */
+
 .marvel-container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    background: url(https://mir-s3-cdn-cf.behance.net/project_modules/max_3840/c7f59331516629.56544dec01432.png)no-repeat;
+    height: 100vh;
+    display: flex;
 }
-.mb-3 {
+
+.marvelImage-container {
     width: 500px;
-    margin-top: 30px;
+    height: 500px;
+    text-align: center;
 }
+
+.marvelImage-container img {
+    width: 100%;
+    width: 100%;
+    border-radius: 30px;
+}
+
+.marvel-input {
+    display: flex;
+    width: 500px;
+    margin-top: 90px;
+}
+
 .mb-3 input button {
+    display: flex;
     width: 100%
 }
+
 .hide {
     display: none;
 }
+
+/* //////////////////////////////////// */
+/*             Scene It                 */
+/* //////////////////////////////////// */
+
+
 .sceneIt-container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    background: url(https://mir-s3-cdn-cf.behance.net/project_modules/max_3840/83705b31516629.5654497747ade.png)no-repeat;
+    height: 100vh;
 }
+
+.sceneIt-inner-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(211,211,211, .7);
+    padding: 20px;
+    border-radius: 30px;
+}
+
+.sceneIt-input {
+    display: flex;
+    width: 500px;
+    margin-top: 30px;
+}
+
 .backdrop-container {
+    display: flex;
+    flex-direction: column;
     text-align: center;
 }
+
 .backdrop-container img {
     border-radius: 30px;
 }
@@ -213,4 +271,56 @@ label{
     border: 2px solid grey;
     margin-left: 1%;
     box-shadow: 5px 5px 5px black;
+}
+
+/* //////////////////////////////////// */
+/*             Nav                      */
+/* //////////////////////////////////// */
+
+.nav-container {
+    font-family: 'Audiowide', cursive;
+    margin-bottom: 30px;
+    padding-top: 30px;
+    padding-left: 20px;
+}
+
+.nav-container a {
+    margin-right: 20px;
+}
+
+/* //////////////////////////////////// */
+/*             Trivia                   */
+/* //////////////////////////////////// */
+
+.triviaPage-container {
+    background: url(https://mir-s3-cdn-cf.behance.net/project_modules/max_3840/c7f59331516629.56544dec01432.png)no-repeat;
+    height: 100vh;
+    display: flex;
+}
+
+.trivia-innerContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* color: white;
+    text-shadow: 2px 2px grey; */
+    text-align: center;
+}
+
+.trivia-btn {
+    display: flex;
+    margin: 20px;
+    font-size: 30px;
+    border-radius: 10px;
+}
+
+.trivia-innerContainer h1 {
+    background-color: rgba(211,211,211, .8);
+    padding: 20px;
+    border-radius: 30px;
+}
+
+.allBtn-container {
+    display: flex;
 }

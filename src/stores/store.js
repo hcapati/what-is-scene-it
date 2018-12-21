@@ -4,7 +4,14 @@ import { CREATEUSER, LOGIN, ADDPTS, MINUSPTS, SETDIFFICULTY, SETCATEGORY, DISABL
 
 const initialState = {
     users: Data,
-    currentUser: { },
+    currentUser: {
+        username: 'merchantOfDeath',
+        email: 'tstark@starkindustries.com',
+        password: 'pepperPotts123',
+        firstName: 'Tony',
+        lastName: 'Stark',
+        scoreHistory: [3000, 2500, 1000, 3100, 800]
+    },
     inGamePts: 0,
     category: 0,
     difficulty: '',

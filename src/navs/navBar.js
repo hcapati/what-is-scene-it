@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     return ( 
-        <div>
+        <div className="nav-container">
             <div>
-                <Link to='/game'>Start Game</Link>
-                <Link to='/results'>Results</Link>
-                <Link to='/'>Log-out</Link>
+                <Link className="btn btn-outline-primary" to='/game'>Start Game</Link>
+                <Link className="btn btn-outline-primary" to='/results'>Results</Link>
+                <Link className="btn btn-outline-primary" to='/'>Log-out</Link>
             </div>
         </div>
      );
