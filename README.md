@@ -1,6 +1,6 @@
 # What is Scene It? Project
 
-Trivia game web application to test user knowledge. Second Propject to demonstrate knowledge of technologies: React, Redux, Javascript, Restful APIs, JSON, HTML, CSS, Bootstrap, and Moqups.
+Trivia game web application to test user knowledge. Second Project to demonstrate knowledge of technologies: React, Redux, Javascript, Restful APIs, JSON, HTML, CSS, Bootstrap, and Moqups.
 
 Creators of the project: [Alejandro Ozai](https://github.com/FireLordOzai01) and Heather Capati.
 
