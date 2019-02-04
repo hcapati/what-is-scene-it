@@ -28,16 +28,19 @@ As user plays they will earn or lose points based on card value. If a user's ans
 3. On login, grabbed email data from login form to search all users that match the email of the user loggin in. When found, copied user to current user in initial state which populates the score history on results page. 
 
 ## Collaboration 
+
 Paired Programming - Login and SignUp Functionality. CSS styling using Bootstrap. Disabling card functionality.
 Alejandro Ozai - Setting up Restful Apis for 'Marvel' and 'Scene It' categories. Created functionality for Results Page. 
 Heather Capati - Set up Restful Api for 'General Knowledge' and 'Science & Nature' categories. Wired redux for card application, setting up game matrix functionality. Redirecting to game page, results page, login/logout page. 
 
 ## Success
+
 Saved time by planning and organizing before implementing code. Created wireframes to help visualize how the application will function. 
 
 ![alt text](/src/wireframe/siteTree.png)
 
 ## What would we do differently 
+
 Not underestimate how long certain features would be implemented. 
 
 ### Demo
