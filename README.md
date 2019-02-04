@@ -55,6 +55,22 @@ Not underestimate how long certain features would be implemented.
 
 ![alt text](/screenshots/signUpPage.png)
 
+### Results Page
+
+![alt text](/screenshots/resultsPage.png)
+
+### Game Page
+
+![alt text](/screenshots/GamePage.png)
+
+### Game Instructions
+
+![alt text](/screenshots/instructions.png)
+
+### General Knowledge and Science & Nature trivia
+
+![alt text](/screenshots/questionPage.png)
+
 ### Who Dat trivia
 
 ![alt text](/screenshots/whoDatPage.png)
@@ -62,3 +78,4 @@ Not underestimate how long certain features would be implemented.
 ### Movie trivia
 
 ![alt text](/screenshots/movieQuestionPage.png)
+
