@@ -40,3 +40,22 @@ Saved time by planning and organizing before implementing code. Created wirefram
 ## What would we do differently 
 Not underestimate how long certain features would be implemented. 
 
+### Demo
+
+![](/screenshots/demo.gif)
+
+### Login Page
+
+![alt text](/screenshots/loginScreen.png)
+
+### Sign up Page
+
+![alt text](/screenshots/signUpPage.png)
+
+### Who Dat trivia
+
+![alt text](/screenshots/whoDatPage.png)
+
+### Movie trivia
+
+![alt text](/screenshots/movieQuestionPage.png)
